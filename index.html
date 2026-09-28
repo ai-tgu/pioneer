@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nộp Hồ Sơ Dự Thi - AI PIONEER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .bg-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(#1e3a8a 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-pattern min-h-screen py-10 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+
+    <div class="max-w-4xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+        
+        <!-- Cột thông tin & Hình ảnh -->
+        <div class="w-full md:w-5/12 bg-blue-600 text-white p-8 flex flex-col justify-between">
+            <div>
+                <h1 class="text-3xl font-extrabold mb-2 text-yellow-300">AI PIONEER</h1>
+                <p class="text-lg font-semibold mb-6">Tiên phong cùng AI - 2026</p>
+                
+                <!--img src="AI2026.jpg" alt="Poster AI PIONEER" class="w-full h-auto rounded-lg shadow-md mb-6 object-cover border-2 border-blue-400"-->
+                
+                <div class="bg-blue-700 p-4 rounded-lg shadow-inner">
+                    <h3 class="font-bold text-yellow-300 mb-2 flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Lưu ý: Hồ sơ Google Drive cần có
+                    </h3>
+                    <ul class="text-sm space-y-1 list-disc list-inside text-blue-100">
+                        <li>Phiếu đăng ký dự thi</li>
+                        <li>Bản mô tả dự án/ý tưởng hoặc PPT</li>
+                        <li>Video giới thiệu/demo (03-05p)</li>
+                        <li>Sản phẩm hoặc đường dẫn (nếu có)</li>
+                        <li>Tài liệu minh chứng (data, source...)</li>
+                        <li>Mô tả việc sử dụng AI trong dự án</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 text-sm text-blue-200">
+                <p>Trường Đại học Tiền Giang</p>
+                <p>Thời hạn nộp: 30/10/2026</p>
+            </div>
+        </div>
+
+        <!-- Cột Form Điền Thông Tin -->
+        <div class="w-full md:w-7/12 p-8 lg:p-10">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Thông tin nộp sản phẩm/dự án</h2>
+            
+            <form id="submissionForm" class="space-y-5">
+                <!-- Tên Đội / Cá nhân -->
+                <div>
+                    <label for="teamName" class="block text-sm font-medium text-gray-700">Tên Đội / Cá nhân dự thi *</label>
+                    <input type="text" id="teamName" name="teamName" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+
+                <!-- Email & SĐT -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email đại diện *</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Số điện thoại *</label>
+                        <input type="tel" id="phone" name="phone" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+
+                <!-- Nhóm chủ đề -->
+                <div>
+                    <label for="category" class="block text-sm font-medium text-gray-700">Nhóm chủ đề dự thi *</label>
+                    <select id="category" name="category" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <option value="">-- Chọn nhóm chủ đề --</option>
+                        <option value="Nhóm 1">Nhóm 1: AI trong giảng dạy và đào tạo</option>
+                        <option value="Nhóm 2">Nhóm 2: AI trong nghiên cứu khoa học</option>
+                        <option value="Nhóm 3">Nhóm 3: AI trong quản trị và hoạt động của Nhà trường</option>
+                        <option value="Nhóm 4">Nhóm 4: AI giải quyết bài toán thực tế của doanh nghiệp</option>
+                        <option value="Nhóm 5">Nhóm 5: AI phục vụ cộng đồng và phát triển KT-XH</option>
+                    </select>
+                </div>
+
+                <!-- Link Google Drive -->
+                <div>
+                    <label for="driveLink" class="block text-sm font-medium text-gray-700">Đường link Google Drive (Chứa hồ sơ dự thi) *</label>
+                    <p class="text-xs text-red-500 mb-1 italic">Vui lòng đảm bảo link Google Drive đã được cấp quyền "Bất kỳ ai có liên kết đều có thể xem".</p>
+                    <input type="url" id="driveLink" name="driveLink" required placeholder="https://drive.google.com/..." class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+
+                <!-- Nút Submit -->
+                <div class="pt-4">
+                    <button type="submit" id="submitBtn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                        Gửi Hồ Sơ Dự Thi
+                    </button>
+                </div>
+                
+                <!-- Status Message -->
+                <div id="statusMessage" class="hidden text-center text-sm font-medium py-2 rounded-md mt-4"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase SDK (Sử dụng module) -->
+    <script type="module">
+        // Import các hàm từ Firebase v10
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // Cấu hình Firebase mà bạn cung cấp
+        const firebaseConfig = {
+            apiKey: "AIzaSyDrMMrGH3DH0PBnhLRjR2Rkm9_umdPm8hM",
+            authDomain: "ai-tgu.firebaseapp.com",
+            projectId: "ai-tgu",
+            storageBucket: "ai-tgu.firebasestorage.app",
+            messagingSenderId: "762464406232",
+            appId: "1:762464406232:web:fae91557988154362de5ad",
+            measurementId: "G-MW8CF45Y0T"
+        };
+
+        // Khởi tạo Firebase App và Firestore
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Xử lý sự kiện Submit Form
+        const form = document.getElementById('submissionForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusMessage = document.getElementById('statusMessage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Đổi trạng thái nút bấm
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Đang xử lý...';
+            submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+            statusMessage.classList.add('hidden');
+
+            // Lấy dữ liệu từ form
+            const teamName = document.getElementById('teamName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const category = document.getElementById('category').value;
+            const driveLink = document.getElementById('driveLink').value.trim();
+
+            try {
+                // Thêm Document vào Collection 'submissions' trong Firestore
+                await addDoc(collection(db, "submissions"), {
+                    teamName: teamName,
+                    email: email,
+                    phone: phone,
+                    category: category,
+                    driveLink: driveLink,
+                    submittedAt: serverTimestamp() // Lưu thời gian nộp
+                });
+
+                // Hiển thị thông báo thành công
+                statusMessage.textContent = 'Tuyệt vời! Hồ sơ của bạn đã được gửi thành công.';
+                statusMessage.className = 'text-center text-sm font-medium py-3 rounded-md mt-4 bg-green-100 text-green-700 border border-green-300';
+                
+                // Reset form sau khi gửi thành công
+                form.reset();
+            } catch (error) {
+                console.error("Lỗi khi thêm document: ", error);
+                // Hiển thị thông báo lỗi
+                statusMessage.textContent = 'Có lỗi xảy ra khi gửi dữ liệu. Vui lòng thử lại sau.';
+                statusMessage.className = 'text-center text-sm font-medium py-3 rounded-md mt-4 bg-red-100 text-red-700 border border-red-300';
+            } finally {
+                // Phục hồi lại nút bấm
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Gửi Hồ Sơ Dự Thi';
+                submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+            }
+        });
+    </script>
+</body>
+</html>
